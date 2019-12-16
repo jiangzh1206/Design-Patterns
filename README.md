@@ -28,40 +28,52 @@
 ----
 
 ### [1.Builder](https://github.com/jiangzh1206/Design-Patterns/tree/master/Builder)
-将一个复杂对象的构建与其表示相分离，使得同样的构建过程(稳定)可以创建不同的表示(变化)。 ——《设计模式》GoF
+将一个复杂对象的构建与其表示相分离，使得同样的构建过程(稳定)可以创建不同的表示(变化)。 ——《设计模式》GoF  
 Builder模式和AbstractFactory模式在功能上很相似，因为都是用来创建大的复杂的对象，它们的区别是：Builder模式强调的是一步步创建对象，并通过相同的创建过程可以获得不同的结果对象，一般来说Builder模式中对象不是直接返回的。而在AbstractFactory模式中对象是直接返回的，AbstractFactory模式强调的是为创建多个相互依赖的对象提供一个同一的接口
 分步构建复杂对象，步骤需要稳定，复杂对象各部分变化。
 ### [2.Factories](https://github.com/jiangzh1206/Design-Patterns/tree/master/Factory)  
-定义一个用于创建对象的接口，让子类决定实例化哪一个类。Factory Method使得一个类的实例化延迟（目的：解耦，手段：  
-虚函数）到子类。 ——《设计模式》GoF
+定义一个用于创建对象的接口，让子类决定实例化哪一个类。Factory Method使得一个类的实例化延迟（目的：解耦，手段：虚函数）到子类。 ——《设计模式》GoF  
 * A class that knows how to create objects
-* A function that, when called, creates an object
+* A function that, when called, creates an object  
+工厂通常是一个单独的类，它知道如何构造对象  
 工厂方法是用作创建对象的一种方法的类成员，它通常替换构造函数。  
-工厂通常是一个单独的类，它知道如何构造对象
+抽象工厂提供特定接口，具体事项由子类具体工厂实现
 
 ### [3.Prototype](https://github.com/jiangzh1206/Design-Patterns/tree/master/Prototype)
-使用原型实例指定创建对象的种类，然后通过拷贝这些原型来创建新的对象。 ——《设计模式》GoF
-一个模型对象，我们可以复制，定制这些复制，然后使用它们。原型模式的挑战实际上是复制部分，其他的都很简单。
-Prototype模式同样用于隔离对象的使用者和具体类型(易变类)之间的耦合关系，它同样要求这些“易变类”拥有稳定的接口。
-Prototype模式对于“如何创建易变类的实体对象“采用”原型克隆“的方法来做， 它使得我们可以非常灵活地动态创建”拥有某些稳定接口“的新对象——所需工作仅仅是注册一个新类的对象(即原型)， 然后在任何需要的地方Clone。
+使用原型实例指定创建对象的种类，然后通过拷贝这些原型来创建新的对象。 ——《设计模式》GoF  
+一个模型对象，我们可以复制，定制这些复制，然后使用它们。原型模式的挑战实际上是复制部分，其他的都很简单。  
+Prototype模式同样用于隔离对象的使用者和具体类型(易变类)之间的耦合关系，它同样要求这些“易变类”拥有稳定的接口。  
+Prototype模式对于“如何创建易变类的实体对象“采用”原型克隆“的方法来做，它使得我们可以非常灵活地动态创建”拥有某些稳定接口“的新对象——所需工作仅仅是注册一个新类的对象(即原型)，然后在任何需要的地方Clone。
 Prototype模式中的Clone方法可以利用某些框架中的序列化来实现深拷贝。
+
 ### [4.Singleton](https://github.com/jiangzh1206/Design-Patterns/tree/master/Singleton)
 保证一个类仅有一个实例，并提供一个该实例的全局访问点。 ——《设计模式》GoF
+
 ## Structural Patterns 结构型模式
 ----
 ### [5.Adapter](https://github.com/jiangzh1206/Design-Patterns/tree/master/Adapter)
-将一个类的接口转换成客户希望的另一个接口。Adapter模式使得原本由于接口不兼容而不能一起工作的那些类可以一起工作。 
+将一个类的接口转换成客户希望的另一个接口。Adapter模式使得原本由于接口不兼容而不能一起工作的那些类可以一起工作。  
+
 ### [6.Bridge](https://github.com/jiangzh1206/Design-Patterns/tree/master/Bridge)
+将抽象部分与实现部分分离，使它们都可以独立的变化  
+在有多种可能会变化的情况下，用继承会造成类爆炸问题，扩展起来不灵活  
+实现系统存在多个角色，每个角色都可能变化  
 
 ### [7.Composite](https://github.com/jiangzh1206/Design-Patterns/tree/master/Composite)
+组合模式，是为了解决整体和部分的一致对待的问题而产生的，要求这个整体与部分有一致的操作或行为。部分和整体都继承与一个公共的抽象类，  
+这样，外部使用它们时是一致的，不用管是整体还是部分，使用一个方法即可遍历整体中的所有的部分。就像一个树形结构一样。
 
-### [8.Decorator](https://github.com/jiangzh1206/Design-Patterns/tree/master/Decorator)
-动态（组合）地给一个对象增加一些额外的职责。就增加功能而言，Decorator模式比生成子类（继承）更为灵活（消除重复代码 & 减少子类个数）。 ——《设计模式》GoF
+### [8.Decorator（装饰者）](https://github.com/jiangzh1206/Design-Patterns/tree/master/Decorator)
+动态（组合）地给一个对象增加一些额外的职责。就增加功能而言，Decorator模式比生成子类（继承）更为灵活（消除重复代码 & 减少子类个数）。 ——《设计模式》GoF  
+装饰者模式，在不修改现在有接口和实现类的基础上实现功能或者状态的添加
+
 ### [9.Facade（门面/外观模式）](https://github.com/jiangzh1206/Design-Patterns/tree/master/Facade)
-为子系统中的一组接口提供一个一致(稳定)的界面，Façade模式定义了一个高层接口，这个接口使得这一子系统更加容易使用(复用)。 ——《设计模式》GoF
+为子系统中的一组接口提供一个一致(稳定)的界面，Façade模式定义了一个高层接口，这个接口使得这一子系统更加容易使用(复用)。 ——《设计模式》GoF  
+
 ### [10.Flyweight（享元模式）](https://github.com/jiangzh1206/Design-Patterns/tree/master/Flyweight)
-运行共享技术有效地支持大量细粒度的对象。 ——《设计模式》GoF
+运行共享技术有效地支持大量细粒度的对象。 ——《设计模式》GoF  
 通常，有大量非常相似的对象的情况下使用FlyWeights
+
 ### [11.Proxy](https://github.com/jiangzh1206/Design-Patterns/tree/master/Proxy)
 为其他对象提供一种代理以控制(隔离，使用接口)对这对象的访问。 ——《设计模式》GoF
 ## Behavioral Patterns 行为型模式

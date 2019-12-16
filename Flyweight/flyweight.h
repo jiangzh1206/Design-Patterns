@@ -7,6 +7,7 @@ using namespace std;
 #include <boost/flyweight.hpp>
 #include <boost/flyweight/key_value.hpp>
 
+
 typedef uint32_t key;
 
 // 只存name引用
@@ -32,28 +33,35 @@ struct User
             cout << "Key: " << entry.first << ", Value: " << entry.second << endl;
         }
     }
-
+    friend ostream& operator<<(ostream& os, const User& obj)
+    {
+        return os
+            << "first_name: " << obj.first_name << " " << obj.get_first_name()
+            << " last_name: " << obj.last_name << " " << obj.get_last_name();
+    }
 protected:
     key first_name;
     key last_name;
 
     // 双向映射
-    static boost::bitmap<key, string> names;
+    static boost::bimap<key, string> names;
     static key seed;
-    
+
     static key add(const string& name)
     {
         auto it = names.right.find(name);
-        if (it == name.right.end()) {
+        if (it == names.right.end()) {
             // insert
-            names.insert({++seed, s});
+            key id = ++seed;
+            names.insert({id, name});
+            return id;
         }
 
-        return it.first;
+        return it->second;
     }
 };
 key User::seed = 0;
-bimap<key, string> User::names{};
+boost::bimap<key, string> User::names{};
 
 
 // 使用boost.flyweights

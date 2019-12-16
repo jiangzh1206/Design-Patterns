@@ -1,9 +1,7 @@
-#include "simple_builder.h"
 #include "composite_builder.h"
+#include "simple_builder.h"
 
-
-struct S
-{
+struct S {
     void ff() const { std::cout << "ff()" << std::endl; }
     void f() &
     {
@@ -12,15 +10,14 @@ struct S
     void f() && { std::cout << "f()&&" << std::endl; }
 };
 
-
-int main()
+int main_()
 {
     {
         S s;
         s.f();
         (new S)->f();
         S().f();
-        auto ts = [](){
+        auto ts = []() {
             return S();
         };
         ts().f();

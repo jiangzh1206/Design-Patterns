@@ -17,7 +17,7 @@ public:
 
     int get_agility() { return abilities[agi]; }
     void set_agility(int value) { abilities[agi] = value; }
-    
+
     int get_intelligence() const { return abilities[intl]; }
     void set_intelligence(int value) { abilities[intl] = value; }
 
@@ -41,7 +41,7 @@ struct Group : GraphicObject
 {
     std::string name;
     std::vector<GraphicObject*> objects;
-    
+
     explicit Group(const std::string& name)
         : name{name}
     {

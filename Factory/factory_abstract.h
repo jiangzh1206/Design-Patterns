@@ -1,6 +1,6 @@
 #include <iostream>
-#include <memory>
 #include <map>
+#include <memory>
 
 using namespace std;
 
@@ -17,14 +17,13 @@ struct Tea : HotDrink
     }
 };
 
-struct Coffee: HotDrink
+struct Coffee : HotDrink
 {
     void prepare(int volume) override
     {
         cout << "prepare " << volume << "ml coffee." << endl;
     }
 };
-
 
 #if 0
 unique_ptr<HotDrink> make_drink(string type)
@@ -68,6 +67,7 @@ struct CoffeeFactory : HotDrinkFactory
 class DrinkFactory
 {
     map<string, unique_ptr<HotDrinkFactory>> hot_factory_;
+
 public:
     DrinkFactory()
     {
@@ -79,11 +79,10 @@ public:
     {
         auto drink = hot_factory_[name]->make();
         int volume = 500;
-        drink->prepare(volume);  // oops!
+        drink->prepare(volume); // oops!
         return drink;
     }
 };
-
 
 void test()
 {

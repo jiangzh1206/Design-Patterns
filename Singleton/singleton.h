@@ -1,3 +1,5 @@
+#pragma once
+
 // 单例
 struct SingleTon
 {
@@ -23,11 +25,11 @@ template<typename T>
 class Instance
 {
 public:
-	static T& Get()
-	{
-		static T obj;
-		return obj;
-	}
+    static T& Get()
+    {
+        static T obj;
+        return obj;
+    }
 };
 
 void demo()
@@ -36,7 +38,7 @@ void demo()
     //ss = std::move(ss);
     //auto s = std::move(ss);
     //SingleTon s = SingleTon();
-    
-    struct Obj{}
+
+    struct Obj {};
     auto obj = Instance<Obj>::Get();
 }
