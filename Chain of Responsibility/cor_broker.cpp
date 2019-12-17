@@ -13,9 +13,9 @@ struct Query
 
 
   Query(const string& creature_name, const Argument argument, const int result)
-    : creature_name(creature_name),
-      argument(argument),
-      result(result)
+    : creature_name(creature_name)
+    , argument(argument)
+    , result(result)
   {
   }
 };
@@ -96,7 +96,7 @@ public:
 };
 
 // similar idea, but Query instead of Command
-int main(int ac, char* av)
+int main_1254(int ac, char* av)
 {
   Game game;
   Creature goblin{ game, "Strong Goblin", 2, 2 };

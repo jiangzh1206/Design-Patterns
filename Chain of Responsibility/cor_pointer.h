@@ -8,9 +8,9 @@ struct Creature
     int attack, defense;
 
     Creature(const string& name, const int attack, const int defense)
-        : name(name),
-        attack(attack),
-        defense(defense)
+        : name(name)
+        , attack(attack)
+        , defense(defense)
     {
     }
 
@@ -103,7 +103,7 @@ public:
     }
 };
 
-void test()
+void test_124()
 {
     Creature goblin{"Goblin", 1, 1};
     CreatureModifier root{goblin};

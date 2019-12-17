@@ -4,7 +4,7 @@
 #include <iostream>
 
 class PersonBuilder;
-class Person
+class Personx
 {
     // ×¡Ö·ÐÅÏ¢
     std::string street_address, post_code, city;
@@ -13,12 +13,12 @@ class Person
     std::string company_name, position;
     int annual_income = 0;
 
-    Person()
+    Personx()
     {
         std::cout << "person()" << "\n";
     }
 public:
-    ~Person()
+    ~Personx()
     {
         std::cout << "~person()" << "\n";
     }
@@ -26,7 +26,7 @@ public:
     static PersonBuilder create();
 
 
-    Person(Person&& other) noexcept
+    Personx(Personx&& other) noexcept
         : street_address{move(other.street_address)},
         post_code{move(other.post_code)},
         city{move(other.city)},
@@ -36,7 +36,7 @@ public:
     {
     }
 
-    Person& operator=(Person&& other)
+    Personx& operator=(Personx&& other)
     {
         if (this == &other)
             return *this;
@@ -49,7 +49,7 @@ public:
         return *this;
     }
 
-    friend std::ostream& operator<<(std::ostream& os, const Person& obj)
+    friend std::ostream& operator<<(std::ostream& os, const Personx& obj)
     {
         return os
             << "street_address: " << obj.street_address

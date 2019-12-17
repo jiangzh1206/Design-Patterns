@@ -2,8 +2,210 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="..\Builder\composite_builder.cpp">
+      <Filter>1.builder</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Builder\person.cpp">
+      <Filter>1.builder</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Builder\main_.cpp">
+      <Filter>1.builder</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Prototype\Prototype.cpp">
+      <Filter>3.prototype</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Bridge\bridge.cpp">
+      <Filter>6.bridge</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Bridge\Personx.cpp">
+      <Filter>6.bridge</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Chain of Responsibility\cor_broker.cpp">
+      <Filter>12.chain_of_responsibility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Interpreter\handmade.cpp">
+      <Filter>14.interpreter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Memento\memento.cpp">
+      <Filter>17.memento</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NullObject\null_object.cpp">
+      <Filter>18.null_object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\State\classic.cpp">
+      <Filter>20.state</Filter>
+    </ClCompile>
+    <ClCompile Include="..\State\handmade.cpp">
+      <Filter>20.state</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Strategy\strategy_dynamic_static.cpp">
+      <Filter>21.strategy</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Visitor\double_dispatch.cpp">
+      <Filter>23.visitor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Visitor\std_visit.cpp">
+      <Filter>23.visitor</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="1.builder">
+      <UniqueIdentifier>{364500ed-8d9f-40bf-a564-97105f48ea25}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2.fatories">
+      <UniqueIdentifier>{5af3ddaa-0bc6-4f40-a57d-bba079986f7a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3.prototype">
+      <UniqueIdentifier>{e1742b46-ed36-45e6-b487-a50f95d3b2cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="4.singleton">
+      <UniqueIdentifier>{8c10715e-e41f-4f4c-b107-b7f93bfab08f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="5.adapter">
+      <UniqueIdentifier>{2d76441a-59ad-4317-b41c-85657070ea4c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="6.bridge">
+      <UniqueIdentifier>{0a040e48-0f0d-4e9c-acaa-8c2e99bb19e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="7.composite">
+      <UniqueIdentifier>{a664ef51-db0b-4e32-9e84-4f9f9ae4db53}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="8.decorator">
+      <UniqueIdentifier>{6c573f0e-5e8c-44ae-ad8c-c2938f631649}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="9.Facade">
+      <UniqueIdentifier>{0d492e4e-ce48-4635-98a2-de54277e2da0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="10.flyweight">
+      <UniqueIdentifier>{d74742a9-3d21-412e-a231-18a72e36d7e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="11.proxy">
+      <UniqueIdentifier>{c9681633-befc-4d3d-a6ff-ae0344f4c82c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="12.chain_of_responsibility">
+      <UniqueIdentifier>{7b1e5666-ad6c-4baa-8fae-00d6415fb28e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="13.Command">
+      <UniqueIdentifier>{c2a9e353-f12c-41bc-8390-1330467d6fb1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="14.interpreter">
+      <UniqueIdentifier>{f2265820-185d-4db0-83f8-67313296a2bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="15.iterator">
+      <UniqueIdentifier>{abce36ac-0a2e-4717-9238-21ad9dc77d80}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="16.mediator">
+      <UniqueIdentifier>{9bae09c8-71e0-4464-abba-759c141b0a2a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="17.memento">
+      <UniqueIdentifier>{b73df2d7-c851-40b6-ade4-ac7d90fad61f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="18.null_object">
+      <UniqueIdentifier>{bfe39559-7d9a-47a1-b157-aa219f19828c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="19.oberver">
+      <UniqueIdentifier>{a8ef9a5d-980b-4cf2-979c-018c5906cabb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="20.state">
+      <UniqueIdentifier>{e74ab719-e674-44db-878d-570d842baf3a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="21.strategy">
+      <UniqueIdentifier>{83788c94-25c3-4056-a864-80dd4aee309f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="22.template_method">
+      <UniqueIdentifier>{eab169a6-ad6e-4652-8eb7-4ac98500a99e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="23.visitor">
+      <UniqueIdentifier>{86855fec-03b0-4226-831f-ee413d520e94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="24.maybe_monad">
+      <UniqueIdentifier>{faf9ded9-1f2d-4f71-ba6a-9cdbfafcbc2a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Builder\composite_builder.h">
+      <Filter>1.builder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Builder\person.h">
+      <Filter>1.builder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Builder\simple_builder.h">
+      <Filter>1.builder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Factory\factory.h">
+      <Filter>2.fatories</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Factory\factory_abstract.h">
+      <Filter>2.fatories</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Singleton\singleton.h">
+      <Filter>4.singleton</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Adapter\adapter.h">
+      <Filter>5.adapter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Bridge\bridge.h">
+      <Filter>6.bridge</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Composite\composite.h">
+      <Filter>7.composite</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Decorator\decorator.h">
+      <Filter>8.decorator</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Facade\facade.h">
+      <Filter>9.Facade</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Flyweight\flyweight.h">
+      <Filter>10.flyweight</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Bridge\Personx.h">
+      <Filter>6.bridge</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Proxy\proxy.h">
+      <Filter>11.proxy</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Chain of Responsibility\cor_pointer.h">
+      <Filter>12.chain_of_responsibility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Command\command.h">
+      <Filter>13.Command</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Iterator\iterator.h">
+      <Filter>15.iterator</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Iterator\iterator_j.h">
+      <Filter>15.iterator</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Iterator\recursive_generator.h">
+      <Filter>15.iterator</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Mediator\mediator.h">
+      <Filter>16.mediator</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Observer\observer.h">
+      <Filter>19.oberver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Template Method\manday.h">
+      <Filter>22.template_method</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MaybeMonad\MaybeMonad.h">
+      <Filter>24.maybe_monad</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Visitor\visitor_acyclic.h">
+      <Filter>23.visitor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Visitor\visitor_classic.h">
+      <Filter>23.visitor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Visitor\visitor_intrusive.h">
+      <Filter>23.visitor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Visitor\visitor_reflective.h">
+      <Filter>23.visitor</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

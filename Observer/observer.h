@@ -87,10 +87,7 @@ struct ConsolePersonObserver : Observer<Person>
 };
 
 
-
-
-
-void test()
+void test_23425()
 {
     Person p{20};
     ConsolePersonObserver cpo;

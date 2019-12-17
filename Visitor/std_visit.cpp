@@ -1,4 +1,7 @@
-#include "Headers.hpp"
+#include <iostream>
+#include <string>
+#include <variant>
+using namespace std;
 
 struct AddressPrinter
 {
@@ -11,7 +14,7 @@ struct AddressPrinter
   }
 };
 
-int main(int ac, char* av[])
+int main_5435(int ac, char* av[])
 {
   variant<string, int> house;
   //house = "Montefiore Castle";

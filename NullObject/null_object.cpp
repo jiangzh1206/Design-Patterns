@@ -4,43 +4,43 @@ using namespace std;
 
 struct Log
 {
-  virtual void LogInfo(const string& message) const = 0;
+    virtual void LogInfo(const string& message) const = 0;
 };
 
 struct ConsoleLog : Log
 {
-  void LogInfo(const string& message) const override
-  {
-    cout << message << endl;
-  }
+    void LogInfo(const string& message) const override
+    {
+        cout << message << endl;
+    }
 };
 
 template <typename LogType>
 struct PaymentProcessing
 {
-  static_assert(is_base_of<Log, LogType>::value, "LogType must be a Log");
+    static_assert(is_base_of<Log, LogType>::value, "LogType must be a Log");
 
-  LogType log;
+    LogType log;
 
-  // alternatively, ctor
+    // alternatively, ctor
 
-  void Process()
-  {
-    log.LogMessage("Processing payments...");
-  }
+    void Process()
+    {
+        log.LogMessage("Processing payments...");
+    }
 };
 
-int main()
+int main_34643()
 {
-  struct NullLog : Log
-  {
-    void LogInfo(const string& message) const override
+    struct NullLog : Log
     {
-    }
-  };
+        void LogInfo(const string& message) const override
+        {
+        }
+    };
 
-  PaymentProcessing<NullLog> pp;
-  
-  getchar();
-  return 0;
+    PaymentProcessing<NullLog> pp;
+
+    getchar();
+    return 0;
 }

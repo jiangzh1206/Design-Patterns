@@ -42,7 +42,7 @@ struct BankAccountCommand : Command
 {
     BankAccount& account_;
     int amount_;
-    enum Action{D, W} action_;
+    enum Action { D, W } action_;
 
     BankAccountCommand(BankAccount& account, Action action, int amount)
         : account_(account), amount_(amount), action_(action)

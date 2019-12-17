@@ -56,7 +56,7 @@ void print_house_name(Person* p)
         .Do([](auto x) { cout << *x << endl; });
 }
 
-int test()
+int test_m234()
 {
     Person p;
     p.address = new Address;

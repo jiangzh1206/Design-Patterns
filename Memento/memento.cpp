@@ -139,7 +139,7 @@ void undo_redo()
   ba.undo();
 }
 
-int main()
+int main_87732()
 {
   // memento()
   undo_redo();

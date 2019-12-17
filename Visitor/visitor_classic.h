@@ -9,32 +9,32 @@ using namespace std;
 // 表达式，（1 + （2 + 3））
 namespace express
 {
-struct Expression
-{
-    ;
-};
-
-struct IntExpression : Expression
-{
-    int value_;
-    explicit IntExpression(int value) : value_(value) {}
-};
-
-struct AddExpression : Expression
-{
-    Expression* left_, *right_;
-
-    AddExpression(Expression* const left, Expression* const right)
-        : left_(left), right_(right)
+    struct Expression
     {
-    }
+        ;
+    };
 
-    ~AddExpression()
+    struct IntExpression : Expression
     {
-        delete left_;
-        delete right_;
-    }
-};
+        int value_;
+        explicit IntExpression(int value) : value_(value) {}
+    };
+
+    struct AddExpression : Expression
+    {
+        Expression* left_, * right_;
+
+        AddExpression(Expression* const left, Expression* const right)
+            : left_(left), right_(right)
+        {
+        }
+
+        ~AddExpression()
+        {
+            delete left_;
+            delete right_;
+        }
+    };
 }
 
 // 给上边表达式添加访问行为，典型实现
@@ -66,7 +66,7 @@ struct IntExpression : Expression
 
 struct AddExpression : Expression
 {
-    Expression* left_, *right_;
+    Expression* left_, * right_;
 
     AddExpression(Expression* const left, Expression* const right)
         : left_(left), right_(right)
@@ -130,10 +130,10 @@ inline void test()
       }
     };
 
-	ExpressionPrinter printer;
-	ExpressionResult result;
-	printer.visit(e);
-	result.visit(e);
-	cout << printer.str() << " = " << result.result_ << endl;
-	// prints "(1+(2+3)) = 6"
+    ExpressionPrinter printer;
+    ExpressionResult result;
+    printer.visit(e);
+    result.visit(e);
+    cout << printer.str() << " = " << result.result_ << endl;
+    // prints "(1+(2+3)) = 6"
 }

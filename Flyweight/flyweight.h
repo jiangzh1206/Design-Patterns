@@ -76,7 +76,6 @@ struct User2
     }
 };
 
-
 void test()
 {
     User john_doe{"John", "Doe"};

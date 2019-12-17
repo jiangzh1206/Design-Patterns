@@ -60,11 +60,11 @@ struct HtmlStrategy : ListStrategy
 struct TextProcessorD
 {
 	void clear() {oss_.str(""); oss_.clear();}
-	void append_list(const vector<string>& item) 
+	void append_list(const vector<string>& items) 
 	{
 		list_strategy_->start(oss_);
 		for (auto& item : items) {
-			list_strategy_->add_list_item(item);
+			list_strategy_->add_list_item(oss_, item);
 		}
 		list_strategy_->end(oss_);
 	}
@@ -72,17 +72,17 @@ struct TextProcessorD
 	{
 		switch(format) 
 		{
-		case: OutputFormat::Markdown:
+		case OutputFormat::Markdown:
 			list_strategy_ = make_unique<MarkdownStrategy>();
 			break;
-		case: OutputFormat::Html:
+		case OutputFormat::Html:
 			list_strategy_ = make_unique<HtmlStrategy>();
 			break;
 		default:
 			throw runtime_error("Unsupported strategy.");
 		}
 	}
-	string str()const { return oss.str();}
+	string str()const { return oss_.str();}
 private:
 	ostringstream oss_;
 	unique_ptr<ListStrategy> list_strategy_;
@@ -92,22 +92,22 @@ private:
 template <typename LS>
 struct TextProcessorS
 {
-	void clear() {oss_.str(""); oss_.clear();}
-		void append_list(const vector<string>& item) 
+	void clear() { oss_.str(""); oss_.clear(); }
+	void append_list(const vector<string>& items)
 	{
-		list_strategy_->start(oss_);
+		list_strategy_.start(oss_);
 		for (auto& item : items) {
-			list_strategy_->add_list_item(item);
+			list_strategy_.add_list_item(oss_, item);
 		}
-		list_strategy_->end(oss_);
+		list_strategy_.end(oss_);
 	}
-	string str()const { return oss.str();}
+	string str()const { return oss_.str(); }
 private:
 	ostringstream oss_;
 	LS list_strategy_;
-}
+};
 
-int main_()
+int main_435435()
 {
 	// danymic
 	TextProcessorD tp;
@@ -116,7 +116,9 @@ int main_()
 	cout << tp.str() << endl;
 	
 	// static strategy
-	TextProcessorS<MarkdownListStrategy> tpm;
+	TextProcessorS<MarkdownStrategy> tpm;
 	tpm.append_list({"aaa", "bbb", "ccc"});
 	cout << tpm.str() << endl;
+
+	return 0;
 }

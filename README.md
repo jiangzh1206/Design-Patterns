@@ -79,17 +79,20 @@ Prototype模式中的Clone方法可以利用某些框架中的序列化来实现
 ## Behavioral Patterns 行为型模式
 
 ### [12.Chain of Responsibility](https://github.com/jiangzh1206/Design-Patterns/tree/master/Chain%20of%20Responsibility)  
-使多个对象都有机会处理请求，从而避免请求的发送者和接收者之间的耦合关系。将这些对象连成一条链，并沿着这条链传递请求，直到有一个对象处理它为止。
+使多个对象都有机会处理请求，从而避免请求的发送者和接收者之间的耦合关系。将这些对象连成一条链，并沿着这条链传递请求，直到有一个对象处理它为止。 ——《设计模式》GoF
 
 ### [13.Command](https://github.com/jiangzh1206/Design-Patterns/tree/master/Command)
+命令模式，将一个请求封装为一个对象，从而使你可用不同的请求对客户进行参数化；对请求排队或记录请求日志，以及支持可撤销的操作。 ——《设计模式》GoF
 
 ### [14.Interpreter（解释器）](https://github.com/jiangzh1206/Design-Patterns/tree/master/Interpreter)  
+给定一个语言，定义它的文法的一种表示，并定义一种解释器，这个解释器使用该表示来解释语言中的句子。 ——《设计模式》GoF  
 Interpreter(解释器)模式是一种特殊的设计模式，它建立一个解释器（Interpreter），对于特定的计算机程序设计语言，用来解释预先定义的文法。尽量不要在重要模块中使用解释器模式，因为维护困难。在项目中，可以使用脚本语言来代替解释器模式。
 
 ### [15.Iterator](https://github.com/jiangzh1206/Design-Patterns/tree/master/Iterator)  
-
+提供一种方法顺序访问一个聚合对象中各个元素，而又不需要暴露该对象的内部表示。 ——《设计模式》GoF
 
 ### [16.Mediator（中介者）](https://github.com/jiangzh1206/Design-Patterns/tree/master/Mediator)
+用一个中介对象来封装(封装变化)一系列的对象交互。中介者使各对象不需要显式的相互引用(编译时依赖->运行时依赖)， 从而使其耦合松散(管理变化)，并且可以独立地改变它们之间的交互。 ——《设计模式》GoF  
 
 ### [17.Memento（备忘录）](https://github.com/jiangzh1206/Design-Patterns/tree/master/Memento)  
 在不破坏封装性的前提下，捕获一个对象的内部状态，并在该对象之外保存这个状态。这样以后就可以将该对象恢复到原先保存的状态。 ——《设计模式》GoF
@@ -108,8 +111,8 @@ Null Object模式主要是消除对null进行检查，并简化代码。
 &emsp;通常有多个操作包含这一相同的条件结构。State模式将每一个条件分支放入一个独立的类中。这使得你可以根据对象  
 &emsp;自身的情况将对象的状态作为一个对象，这一对象可以不依赖于其它对象而独立变化。  
 
-如果系统中某个类的对象存在多种状态，不同状态下行为有差异，而且这些状态之间可以发生转换时使用状态模式；如果系统  
-中某个类的某一行为存在多种实现方式，而且这些实现方式可以互换时使用策略模式。
+如果系统中某个类的对象存在多种状态，不同状态下行为有差异，而且这些状态之间可以发生转换时使用状态模式；  
+如果系统中某个类的某一行为存在多种实现方式，而且这些实现方式可以互换时使用策略模式。
 
 ### [21.Strategy](https://github.com/jiangzh1206/Design-Patterns/tree/master/Strategy)  
 定义一系列算法，把它们一个个封装起来，并且使它们可互相替换（变化）。该模式使得算法可独立于使用它的客户程序(稳  

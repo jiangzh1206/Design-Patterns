@@ -3,7 +3,18 @@
 #include <memory>
 using namespace std;
 
-class LightSwitch;
+struct State;
+struct OffState;
+
+class LightSwitch
+{
+    unique_ptr<State> state_;
+public:
+    LightSwitch();
+    void set_state(State* state);
+    void on();
+    void off();
+};
 
 struct State
 {
@@ -24,11 +35,7 @@ struct OnState : State
         cout << "Light turned on\n";
     }
 
-    void off(LightSwitch* ls) override
-    {
-        cout << "Switching light off...\n";
-        ls->set_state(new OffState());
-    }
+    void off(LightSwitch* ls) override;
 };
 
 struct OffState : State
@@ -38,31 +45,40 @@ struct OffState : State
         cout << "Light turned off\n";
     }
 
-    void on(LightSwitch* ls) override
-    {
-        cout << "Switching light on...\n";
-        ls->set_state(new OnState());
-    }
+    void on(LightSwitch* ls) override;
 };
 
-class LightSwitch
+
+
+inline LightSwitch::LightSwitch()
 {
-    unique_ptr<State> state_;
-public:
-    LightSwitch()
-    {
-        state_.reset(new OffState());
-    }
-    void set_state(State* state)
-    {
-        state_.reset(state);
-    }
-    void on() { state_->on(this); }
-    void off() { state_->off(this); }
-};
+    state_.reset(new OffState());
+}
+
+inline void LightSwitch::set_state(State* state)
+{
+    state_.reset(state);
+}
+
+inline void LightSwitch::on() { state_->on(this); }
+
+inline void LightSwitch::off() { state_->off(this); }
 
 
-void main_()
+inline void OnState::off(LightSwitch* ls)
+{
+    cout << "Switching light off...\n";
+    ls->set_state(new OffState());
+}
+
+inline void OffState::on(LightSwitch* ls)
+{
+    cout << "Switching light on...\n";
+    ls->set_state(new OnState());
+}
+
+
+void main_2432()
 {
     LightSwitch ls;
     ls.on();

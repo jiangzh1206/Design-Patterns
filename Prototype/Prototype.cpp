@@ -3,7 +3,7 @@
 #include <memory>
 #include <functional>
 #include <sstream>
-#include "Person.h"
+//#include "Person.h"
 using namespace std;
 #include <boost/serialization/serialization.hpp>
 #include <boost/archive/text_iarchive.hpp>
@@ -14,7 +14,6 @@ struct Address
     string street;
     string city;
     int suite;
-
 
     Address(const string& street, const string& city, const int suite)
         : street{street},
@@ -37,6 +36,7 @@ struct Address
             << " city: " << obj.city
             << " suite: " << obj.suite;
     }
+
 };
 
 
@@ -83,14 +83,14 @@ private:
     void save(archive& ar, const unsigned version) const
     {
         ar << name;
-        ar << address;
+        //ar << address;
     }
 
     template <class archive>
     void load(archive& ar, const unsigned version)
     {
         ar >> name;
-        ar >> address;
+        //ar >> address;
     }
 
     BOOST_SERIALIZATION_SPLIT_MEMBER()

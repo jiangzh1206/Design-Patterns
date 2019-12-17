@@ -4,7 +4,7 @@
 
 // 多个builder组合构造单个对象
 
-class Person;
+class Personx;
 class PersonJobBuilder;
 class PersonAddressBuilder;
 class PersonBuilder;
@@ -12,11 +12,11 @@ class PersonBuilder;
 class PersonBuilderBase
 {
 protected:
-    Person& person;
-    explicit PersonBuilderBase(Person& person) : person {person} {}
+    Personx& person;
+    explicit PersonBuilderBase(Personx& person) : person {person} {}
 
 public:
-    operator Person()
+    operator Personx()
     {
         return std::move(person);
     }
@@ -28,7 +28,7 @@ public:
 
 class PersonBuilder : public PersonBuilderBase
 {
-    Person p;
+    Personx p;
 public:
     PersonBuilder() : PersonBuilderBase(p) {}
 };
@@ -38,7 +38,7 @@ class PersonAddressBuilder : public PersonBuilderBase
 {
     using self = PersonAddressBuilder;
 public:
-    explicit PersonAddressBuilder(Person& p) : PersonBuilderBase(p) {}
+    explicit PersonAddressBuilder(Personx& p) : PersonBuilderBase(p) {}
     self& at(std::string street_address)
     {
         person.street_address = std::move(street_address);
@@ -60,7 +60,7 @@ class PersonJobBuilder : public PersonBuilderBase
 {
     typedef PersonJobBuilder Self;
 public:
-    explicit PersonJobBuilder(Person& person)
+    explicit PersonJobBuilder(Personx& person)
         : PersonBuilderBase{person}
     {
     }
@@ -87,7 +87,7 @@ public:
 
 inline void builder_demo()
 {
-    Person p = Person::create()
+    Personx p = Personx::create()
         .lives().at("123 London Road")
         .with_postcode("SW1 1GB")
         .in("London")

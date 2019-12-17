@@ -22,7 +22,8 @@ void smart_pointer_proxy()
 }
 
 // 2.property proxy
-template <typename T> struct Property
+template <typename T>
+struct Property
 {
     T value;
     Property(const T initialValue)
@@ -78,13 +79,13 @@ struct Bitmap : Image
 struct LazyBitmap : Image
 {
     Bitmap* bmp = nullptr;
-
-    LazyBitmap(const string& name) {}
+    string name;
+    LazyBitmap(const string& name) : name(name){}
     ~LazyBitmap() { delete bmp; }
     void draw() override
     {
         if (!bmp) {
-            bmp = new Bitmap();
+            bmp = new Bitmap(name);
         }
         bmp->draw();
     }

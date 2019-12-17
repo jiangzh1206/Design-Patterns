@@ -63,7 +63,7 @@ struct JArray
     }
 };
 
-int test()
+int test_43534()
 {
     JArray<char, 5> arr({'a', 'b', 'c', 'd', 'e'});
 
@@ -80,4 +80,12 @@ int test()
     for (auto& v : arr) {
         std::cout << v << std::endl;
     }
+
+    std::cout << "-------------line----------------" << std::endl;
+    JArray<int, 4> arr1({1,2,3,4});
+    for (auto v : arr1) {
+        std::cout << v << std::endl;
+    }
+
+    return 0;
 }

@@ -99,7 +99,7 @@ private:
 };
 
 
-inline void test()
+inline void test_43554()
 {
     auto e = new AddExpression{
       new IntExpression{1},

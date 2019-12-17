@@ -19,10 +19,54 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\Bridge\bridge.cpp" />
+    <ClCompile Include="..\Bridge\Personx.cpp" />
+    <ClCompile Include="..\Builder\composite_builder.cpp" />
+    <ClCompile Include="..\Builder\main_.cpp" />
+    <ClCompile Include="..\Builder\person.cpp" />
+    <ClCompile Include="..\Chain of Responsibility\cor_broker.cpp" />
+    <ClCompile Include="..\Interpreter\handmade.cpp" />
+    <ClCompile Include="..\Memento\memento.cpp" />
+    <ClCompile Include="..\NullObject\null_object.cpp" />
+    <ClCompile Include="..\Prototype\Prototype.cpp" />
+    <ClCompile Include="..\State\classic.cpp" />
+    <ClCompile Include="..\State\handmade.cpp" />
+    <ClCompile Include="..\Strategy\strategy_dynamic_static.cpp" />
+    <ClCompile Include="..\Visitor\double_dispatch.cpp" />
+    <ClCompile Include="..\Visitor\std_visit.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Adapter\adapter.h" />
+    <ClInclude Include="..\Bridge\bridge.h" />
+    <ClInclude Include="..\Bridge\Personx.h" />
+    <ClInclude Include="..\Builder\composite_builder.h" />
+    <ClInclude Include="..\Builder\person.h" />
+    <ClInclude Include="..\Builder\simple_builder.h" />
+    <ClInclude Include="..\Chain of Responsibility\cor_pointer.h" />
+    <ClInclude Include="..\Command\command.h" />
+    <ClInclude Include="..\Composite\composite.h" />
+    <ClInclude Include="..\Decorator\decorator.h" />
+    <ClInclude Include="..\Facade\facade.h" />
+    <ClInclude Include="..\Factory\factory.h" />
+    <ClInclude Include="..\Factory\factory_abstract.h" />
+    <ClInclude Include="..\Flyweight\flyweight.h" />
+    <ClInclude Include="..\Iterator\iterator.h" />
+    <ClInclude Include="..\Iterator\iterator_j.h" />
+    <ClInclude Include="..\Iterator\recursive_generator.h" />
+    <ClInclude Include="..\MaybeMonad\MaybeMonad.h" />
+    <ClInclude Include="..\Mediator\mediator.h" />
+    <ClInclude Include="..\Observer\observer.h" />
+    <ClInclude Include="..\Proxy\proxy.h" />
+    <ClInclude Include="..\Singleton\singleton.h" />
+    <ClInclude Include="..\Template Method\manday.h" />
+    <ClInclude Include="..\Visitor\visitor_acyclic.h" />
+    <ClInclude Include="..\Visitor\visitor_classic.h" />
+    <ClInclude Include="..\Visitor\visitor_intrusive.h" />
+    <ClInclude Include="..\Visitor\visitor_reflective.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -95,14 +139,17 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;BOOST_ALL_DYN_LINK;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <AdditionalOptions>/await %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>E:\vcpkg\vcpkg-2019.11\installed\x86-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>E:\vcpkg\vcpkg-2019.11\installed\x86-windows\debug\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>boost_serialization-vc140-mt-gd.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
